@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">  <!-- Se agrega el atributo lang="en" para indicar que el idioma de la página es inglés -->
+    <head>
+        <meta charset="UTF-8"> <!-- Se agrega la codificación de caracteres UTF-8 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Se agrega la compatibilidad con Internet Explorer -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Se agrega la configuración de la vista en dispositivos móviles -->
+        <title>Cohorte 17 - Fullstack Developers</title> <!-- Se agrega el título de la página -->
+        <link rel="stylesheet" href="css2.css"> <!-- Se agrega la hoja de estilos css2.css -->
+    </head>
+
+    <body>
+
+        <header> <!-- Se agrega la cabecera de la página -->
+            <h1>Bienvenido la Cohorte 17 "Sintra Bajos"</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#acerca">Acerca de</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="carousel"> <!-- Se agrega el carrusel de imágenes -->
+            <div class="carousel-inner"> <!-- Se agrega el contenedor de las imágenes -->
+                <div class="carousel-item active">
+                    <img src="./fotos/Generation Java nov 95.jpg" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./fotos/Generation Java nov 96.jpg" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./fotos/Generation Java nov 97.jpg" alt="Imagen 3">
+                </div>
+            </div>
+            <a class="carousel-control prev">&#10094;</a>
+            <a class="carousel-control next">&#10095;</a>
+        </div>
+        <script>
+            const prev = document.querySelector('.carousel-control.prev');
+            const next = document.querySelector('.carousel-control.next');
+            const carouselInner = document.querySelector('.carousel-inner');
+            const items = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+          
+            function updateCarousel() {
+              const offset = -currentIndex * 100;
+              carouselInner.style.transform = `translateX(${offset}%)`;
+            }
+          
+            prev.addEventListener('click', () => {
+              currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+              updateCarousel();
+            });
+          
+            next.addEventListener('click', () => {
+              currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+              updateCarousel();
+            });
+          </script>
+        
+        <section id="inicio"><!-- Se agrega la sección con el id="inicio" -->
+            <h2>Inicio</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae scelerisque leo. Nam lorem dui, elementum dapibus ligula ac, rhoncus vehicula lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur tristique lobortis magna at vestibulum. Phasellus consequat lectus dignissim ante vestibulum, et imperdiet nulla dictum. Mauris ac dolor at neque auctor gravida. Nunc ac mauris nec lorem egestas condimentum non ut purus. In lorem urna, luctus eget neque a, tincidunt finibus risus. Duis elit nisi, mollis at nibh a, pulvinar luctus neque.</p>
+        </section>
+        <section id="acerca"> <!-- Se agrega la sección con el id="acerca" -->
+            <h2>Acerca de</h2>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean sollicitudin aliquam ipsum quis convallis. Mauris a ex suscipit, euismod nunc quis, viverra felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vitae est ut erat convallis accumsan et nec risus. Aliquam eget ligula id erat commodo ullamcorper vitae ac diam. In hac habitasse platea dictumst. Donec aliquet libero vel pretium dignissim. Nunc molestie est quam, id tincidunt mi vestibulum id. Curabitur ultricies elit quis lectus tempor, in iaculis lectus posuere. Aliquam erat volutpat. Nunc et ullamcorper justo, maximus viverra metus. Vestibulum et scelerisque arcu. In posuere felis vel justo elementum, at rutrum enim suscipit. Nam at lorem ut justo laoreet mollis.</p>
+        </section>
+        
+        
+        <section id="1"> <!-- Se agrega la sección con el id="1" -->
+            <h1>¡Full Stack <span class="travel">Developers!</span></h1> <!-- Se agrega el título de la sección -->
+            <h2>Únete a nuestro equipo</h2> <!-- Se agrega el subtítulo de la sección -->
+            <p>La comunidad de desarrolladores Full Stack Developers!</p> <!-- Se agrega el párrafo de la sección -->
+            <button id="1">¡Quiero saber más!</button> <!-- Se agrega el botón de la sección -->
+        </section>
+
+        <section id="2"> <!-- Se agrega la sección con el id="2" formulario de contacto -->
+            <h2>Contáctanos para obtener más información sobre nuestra comunidad</h2> <!-- Se agrega el subtítulo de la sección -->
+            <form> <!-- Se agrega el formulario de la sección -->
+                <label for="name">Nombre:</label> <!-- Se agrega la etiqueta del campo nombre -->
+                <input type="text" id="name" name="name" required> <!-- Se agrega el campo de texto para el nombre -->
+                <label for="email">Correo electrónico:</label> <!-- Se agrega la etiqueta del campo correo electrónico -->
+                <input type="email" id="email" name="email" required> <!-- Se agrega el campo de texto para el correo electrónico -->
+                <label for="message">Mensaje:</label> <!-- Se agrega la etiqueta del campo mensaje -->
+                <textarea id="message" name="message" required></textarea> <!-- Se agrega el campo de texto para el mensaje -->
+                <button type="button" onclick="presionarBoton()">Enviar</button> <!-- Se agrega el botón de envío del formulario -->
+            </form>
+        </section>
+        <footer> <!-- Se agrega el pie de página -->
+            <p>&copy; 2024 FullStack Developers. Todos los derechos reservados.</p> <!-- Se agrega el texto del pie de página -->
+        </footer>
+        <script src="Miversion/accion2.js"></script> <!-- Se agrega el script accion2.js -->
+
+    </body>
+</html>
